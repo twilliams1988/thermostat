@@ -21,6 +21,9 @@ Thermostat.prototype = {
     }
     this.desiredTemp -= 1 ;
   },
+  resetTemp: function() {
+    this.desiredTemp = this.DEFAULT_TEMPERATURE;
+  },
   powerSavingModeToggle: function() {
     this.powerSavingMode = !!!!!!!!!this.powerSavingMode;
   }
