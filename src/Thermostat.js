@@ -26,5 +26,37 @@ Thermostat.prototype = {
   },
   powerSavingModeToggle: function() {
     this.powerSavingMode = !!!!!!!!!this.powerSavingMode;
+  },
+  displayColor: function() {
+    if(this.desiredTemp < 18) {
+      return 'springgreen';
+    }
+    if(this.desiredTemp > 24) {
+      return 'deeppink';
+    }
+      return 'goldenrod';
   }
 };
+
+
+
+// displayColor: function() {
+//   switch(true) {
+//     case (this.desiredTemp < 18):
+//       return 'springgreen';
+//     case (this.desiredTemp > 24):
+//       return 'deeppink';
+//     default:
+//       return 'goldenrod';
+//   }
+// }
+
+// displayColor: function() {
+//   if(this.desiredTemp < 18) {
+//     return 'springgreen';
+//   } else if(this.desiredTemp > 24) {
+//     return 'deeppink';
+//   } else {
+//     return 'goldenrod';
+//   }
+//   }

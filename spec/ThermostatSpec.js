@@ -49,4 +49,21 @@ describe('Thermostat', function() {
     thermostat.resetTemp();
     expect(thermostat.desiredTemp).toEqual(thermostat.DEFAULT_TEMPERATURE);
   });
+
+  describe('thermostat display', function() {
+    it('colors display SPRINGGREEN when temperature < 18º', function() {
+      thermostat.desiredTemp = 17;
+      expect(thermostat.displayColor()).toEqual('springgreen');
+    });
+    it('colors display GOLDENROD when temperature > 17º < 25º', function() {
+      thermostat.desiredTemp = 18;
+      expect(thermostat.displayColor()).toEqual('goldenrod');
+      thermostat.desiredTemp = 24;
+      expect(thermostat.displayColor()).toEqual('goldenrod');
+    });
+    it('colors display DEEPPINK when temperature >= 25º', function() {
+      thermostat.desiredTemp = 25;
+      expect(thermostat.displayColor()).toEqual('deeppink');
+    });
+  });
 });
