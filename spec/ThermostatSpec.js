@@ -30,4 +30,17 @@ describe('Thermostat', function() {
     thermostat.desiredTemp = 25;
     expect(function(){ thermostat.upTemp(); }).toThrowError('Temperature is limited to 25º in power saving mode');
   });
+
+  it('power saving mode off max temperature is 32º', function() {
+    thermostat.powerSavingModeToggle();
+    thermostat.desiredTemp = 32;
+    expect(function(){ thermostat.upTemp(); }).toThrowError('Temperature is limited to 32º');
+  });
+
+  it('power saving mode can be turned on and off', function() {
+    thermostat.powerSavingModeToggle();
+    expect(thermostat.powerSavingMode).toEqual(false);
+    thermostat.powerSavingModeToggle();
+    expect(thermostat.powerSavingMode).toEqual(true);
+  });
 });

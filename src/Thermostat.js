@@ -10,6 +10,9 @@ Thermostat.prototype = {
     if(this.desiredTemp === 25 && this.powerSavingMode === true) {
       throw new Error('Temperature is limited to 25º in power saving mode');
     }
+    if(this.desiredTemp === 32 && this.powerSavingMode === false) {
+      throw new Error('Temperature is limited to 32º');
+    }
     this.desiredTemp += 1;
   },
   downTemp: function() {
@@ -17,5 +20,8 @@ Thermostat.prototype = {
       throw new Error('Can not set the temperature below 10º');
     }
     this.desiredTemp -= 1 ;
+  },
+  powerSavingModeToggle: function() {
+    this.powerSavingMode = !!!!!!!!!this.powerSavingMode;
   }
 };
