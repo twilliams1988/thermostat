@@ -25,16 +25,16 @@ Thermostat.prototype = {
     this.desiredTemp = this.DEFAULT_TEMPERATURE;
   },
   powerSavingModeToggle: function() {
-    this.powerSavingMode = !!!!!!!!!this.powerSavingMode;
+    this.powerSavingMode = !this.powerSavingMode;
   },
-  displayColor: function() {
+  energyUsage: function() {
     if(this.desiredTemp < 18) {
-      return 'springgreen';
+      return 'low-usage';
     }
-    if(this.desiredTemp > 24) {
-      return 'deeppink';
+    if(this.desiredTemp > 25) {
+      return 'high-usage';
     }
-      return 'goldenrod';
+      return 'medium-usage';
   }
 };
 
